@@ -67,14 +67,14 @@ class Migration(SchemaMigration):
             'Meta': {'ordering': "['-created']", 'object_name': 'PasswordChangeRequired'},
             'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'db_index': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'user': ('django.db.models.fields.related.OneToOneField', [], {'related_name': "'password_change_required'", 'unique': 'True', 'to': u"orm['auth.User']"})
+            'user': ('django.db.models.fields.related.OneToOneField', [], {'related_name': "'password_change_required'", 'unique': 'True', 'to': u"orm['%s.%s']" % (User._meta.app_label, User._meta.object_name)})
         },
         u'password_policies.passwordhistory': {
             'Meta': {'ordering': "['-created']", 'object_name': 'PasswordHistory'},
             'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'db_index': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'password_history_entries'", 'to': u"orm['auth.User']"})
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'password_history_entries'", 'to': u"orm['%s.%s']" % (User._meta.app_label, User._meta.object_name)})
         }
     }
 
