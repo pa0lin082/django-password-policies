@@ -182,7 +182,7 @@ Has the following fields and methods:
                       "address cannot reset the password."),
     }
     # TODO: Help text?
-    email = forms.EmailField(label=_("E-mail"), max_length=75, help_text='help')
+    email = forms.EmailField(label=_("E-mail"), max_length=75, help_text=_('help'))
 
     def clean_email(self):
         """
